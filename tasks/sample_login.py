@@ -4,7 +4,7 @@ import yaml
 from core.driver_factory import BrowserSession
 from core.exception_handler import handle_exception
 from core.logger import get_logger
-from core.utils import fill_and_log, click_and_log, safe_fill
+from core.utils import click_and_log, safe_fill, safe_click, check_success
 
 CONFIG_PATH = Path(__file__).resolve().parents[1] / "config" / "settings.yaml"
 logger = get_logger(__name__)
@@ -17,6 +17,7 @@ def load_settings():
 
 def run_login_task():
     settings = load_settings()
+    success_selector = settings["success_selector"]
     url = settings["target_url"]
     username = settings["login"]["username"]
     password = settings["login"]["password"]
@@ -41,7 +42,7 @@ def run_login_task():
                 handle_exception(page, e, "入力処理失敗")
                 return
 
-            click_and_log(page, "#login-button", "ログインボタン")
+            safe_click(page, "#login-button", "ログインボタン")
 
 
             # ログイン成功の確認例（成功メッセージや要素など）
@@ -49,13 +50,9 @@ def run_login_task():
             # logger.info("ログイン処理完了（暫定）")
 
             # 成功判定（例：ダッシュボードの要素を待つ）
-            try:
-                page.wait_for_selector("#inventory_container", timeout=5000)
-                logger.info("ログイン成功を確認")
-            except:
-                logger.warning("ログイン成功要素が見つからず。暫定成功扱い")
-
-
+            check_success(page, success_selector, "ログイン成功判定")
+            logger.info(f"ログイン後URL: {page.url}")
+            logger.info(f"ログイン後タイトル: {page.title()}")
 
         except Exception as e:
             handle_exception(page, e, context="ログインタスク")
