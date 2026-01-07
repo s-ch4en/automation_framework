@@ -1,0 +1,10 @@
+browser: "chrome"        # 使用ブラウザ
+headless: true             # ブラウザをヘッドレスで動かすか
+timeout: 10                # 要素待ちのタイムアウト秒数
+log_level: "INFO"          # ログレベル
+log_dir: "logs"            # ログ出力先ディレクトリ
+screenshot_dir: "logs/screenshots"
+target_url: "https://www.saucedemo.com/"
+login:
+  username: "standard_user"
+  password: "secret_sauce"

@@ -1,0 +1,119 @@
+2026-01-06 14:53:28 [ERROR] core.exception_handler - [ログインタスク] エラー発生。スクリーンショット保存: logs\screenshots\error_20260106_145328.png
+2026-01-06 14:53:28 [ERROR] core.exception_handler - [ログインタスク] 例外: Page.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("#username")
+
+2026-01-06 14:53:28 [ERROR] core.exception_handler - Traceback (most recent call last):
+  File "C:\Users\cha-c\automation_framework\tasks\sample_login.py", line 31, in run_login_task
+    fill_and_log(page, "#username", username, "ユーザーID")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cha-c\automation_framework\core\utils.py", line 9, in fill_and_log
+    page.fill(selector, value)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 10173, in fill
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.fill(
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_page.py", line 893, in fill
+    return await self._main_frame.fill(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_frame.py", line 607, in fill
+    await self._fill(**locals_to_params(locals()))
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_frame.py", line 619, in _fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("#username")
+
+
+2026-01-06 15:00:56,397 [WARNING] core.driver_factory - Unknown browser type: chrome, fallback to chromium
+2026-01-06 15:00:56,604 [INFO] __main__ - ログインタスク開始
+2026-01-06 15:00:56,729 [INFO] __main__ - ページタイトル: Example Domain
+2026-01-06 15:00:56,729 [INFO] __main__ - URL へアクセス: https://example.com/login
+2026-01-06 15:00:56,729 [INFO] core.utils - ユーザーID に値を入力: user
+2026-01-06 15:01:06,802 [ERROR] core.exception_handler - [ログインタスク] エラー発生。スクリーンショット保存: logs\screenshots\error_20260106_150106.png
+2026-01-06 15:01:06,802 [ERROR] core.exception_handler - [ログインタスク] 例外: Page.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("#username")
+
+2026-01-06 15:01:06,804 [ERROR] core.exception_handler - Traceback (most recent call last):
+  File "C:\Users\cha-c\automation_framework\tasks\sample_login.py", line 32, in run_login_task
+    fill_and_log(page, "#username", username, "ユーザーID")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cha-c\automation_framework\core\utils.py", line 9, in fill_and_log
+    page.fill(selector, value)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 10173, in fill
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.fill(
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_page.py", line 893, in fill
+    return await self._main_frame.fill(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_frame.py", line 607, in fill
+    await self._fill(**locals_to_params(locals()))
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_frame.py", line 619, in _fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\cha-c\automation_framework\venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.fill: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator("#username")
+
+
+2026-01-06 15:09:10,996 [WARNING] core.driver_factory - Unknown browser type: chrome, fallback to chromium
+2026-01-06 15:09:11,202 [INFO] __main__ - ログインタスク開始
+2026-01-06 15:09:11,645 [INFO] __main__ - ページタイトル: Swag Labs
+2026-01-06 15:09:11,645 [INFO] __main__ - URL へアクセス: https://www.saucedemo.com/
+2026-01-06 15:09:11,645 [INFO] core.utils - ユーザーID に値を入力: standard_user
+2026-01-06 15:09:11,682 [INFO] core.utils - パスワード に値を入力: secret_sauce
+2026-01-06 15:09:11,690 [INFO] core.utils - ログインボタン をクリック
+2026-01-06 15:09:13,769 [INFO] __main__ - ログイン処理完了（暫定）
+2026-01-06 15:19:20,579 [WARNING] core.driver_factory - Unknown browser type: chrome, fallback to chromium
+2026-01-06 15:19:20,799 [INFO] __main__ - ログインタスク開始
+2026-01-06 15:19:24,024 [INFO] __main__ - ページタイトル: Swag Labs
+2026-01-06 15:19:24,025 [INFO] __main__ - URL へアクセス: https://www.saucedemo.com/
+2026-01-06 15:19:24,025 [INFO] core.utils - ユーザーID に値を入力: standard_user
+2026-01-06 15:19:24,051 [INFO] core.utils - パスワード に値を入力: secret_sauce
+2026-01-06 15:19:24,058 [INFO] core.utils - ログインボタン をクリック
+2026-01-06 15:19:29,122 [WARNING] __main__ - ログイン成功要素が見つからず。暫定成功扱い
+2026-01-06 15:26:12,868 [WARNING] core.driver_factory - Unknown browser type: chrome, fallback to chromium
+2026-01-06 15:26:13,081 [INFO] __main__ - ログインタスク開始
+2026-01-06 15:26:13,466 [INFO] __main__ - ページタイトル: Swag Labs
+2026-01-06 15:26:13,466 [INFO] __main__ - URL へアクセス: https://www.saucedemo.com/
+2026-01-06 15:26:13,466 [INFO] core.utils - ユーザーID に値を入力: standard_user
+2026-01-06 15:26:13,494 [INFO] core.utils - パスワード に値を入力: secret_sauce
+2026-01-06 15:26:13,500 [INFO] core.utils - ログインボタン をクリック
+2026-01-06 15:26:13,573 [INFO] __main__ - ログイン成功を確認
