@@ -27,12 +27,12 @@ def safe_fill(page: Page, selector: str, value: str, name: str = ""):
     安定した入力処理（待機 + ログ付き）
     """
     label = name or selector
-    logger.info(f"{label} をクリックします")
+    logger.info(f"{label} に値を入力します")
     try:
         page.wait_for_selector(selector)
-        page.click(selector)
+        page.fill(selector, value)
     except Exception as e:
-        handle_exception(page, e, context=f"{label} クリック失敗")
+        handle_exception(page, e, context=f"{label}入力失敗")
         raise
 
 def safe_click(page: Page, selector: str, name: str = ""):
@@ -46,11 +46,13 @@ def safe_click(page: Page, selector: str, name: str = ""):
     label = name or selector
     logger.info(f"{label} をクリックします")
 
-    # 要素が表示されるまで待機
-    page.wait_for_selector(selector)
+    try:
+        page.wait_for_selector(selector)
+        page.click(selector)
+    except Exception as e:
+        handle_exception(page, e, context=f"{label}クリック失敗")
+        raise
 
-    # クリック実行
-    page.click(selector)
 
 def check_success(page, selector: str, name="成功判定"):
     logger.info(f"{name}: {selector} を待機中…")
