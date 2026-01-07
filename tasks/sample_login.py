@@ -35,7 +35,7 @@ def run_login_task():
             logger.info(f"URL へアクセス: {url}")
 
             try:
-                safe_fill(page, "#username", username, "ユーザーID")
+                safe_fill(page, "#user-name", username, "ユーザーID")
                 safe_fill(page, "#password", password, "パスワード")
             except Exception as e:
                 handle_exception(page, e, "入力処理失敗")

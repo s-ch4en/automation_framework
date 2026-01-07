@@ -2,6 +2,7 @@ import logging
 from logging import handlers
 from pathlib import Path
 import yaml
+from logging.handlers import RotatingFileHandler
 
 CONFIG_PATH = Path(__file__).resolve().parents[1] / "config" / "settings.yaml"
 
@@ -19,17 +20,17 @@ def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
     logger.setLevel(settings.get("log_level", "INFO"))
 
-    # すでにハンドラが設定されている場合は再設定しない
-    if logger.handlers:
-        return logger
+    # 重複防止
+    if logger.hasHandlers():
+        logger.handlers.clear()
 
     log_file = log_dir / "automation.log"
 
-    file_handler = handlers.TimedRotatingFileHandler(
+    file_handler = RotatingFileHandler(
         filename=log_file,
-        when="midnight",
-        backupCount=7,
-        encoding="utf-8",
+        maxBytes=5 * 1024 * 1024,
+        backupCount=5,
+        encoding="utf-8"
     )
 
     formatter = logging.Formatter(
