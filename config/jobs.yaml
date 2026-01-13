@@ -1,0 +1,5 @@
+jobs:
+  - name: sample_login
+    enabled: true
+    module: tasks.job_sample_login
+    function: main

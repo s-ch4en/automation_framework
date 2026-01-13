@@ -124,3 +124,31 @@ Ver.1.1
 2-3.面談対応などが発生した場合の課題対応について  5 
 3.課題対応のポイント  6 
 3
+2026-01-13 11:29:05,445 [INFO] __main__ - === ジョブ開始: sample_login ===
+2026-01-13 11:29:10,475 [WARNING] core.driver_factory - Unknown browser type: chrome, fallback to chromium
+2026-01-13 11:29:11,266 [INFO] tasks.sample_login - ログインタスク開始
+2026-01-13 11:29:14,521 [INFO] tasks.sample_login - ページタイトル: Swag Labs
+2026-01-13 11:29:14,521 [INFO] tasks.sample_login - URL へアクセス: https://www.saucedemo.com/
+2026-01-13 11:29:14,521 [INFO] core.utils - ユーザーID に値を入力します
+2026-01-13 11:29:14,575 [INFO] core.utils - パスワード に値を入力します
+2026-01-13 11:29:14,587 [INFO] core.utils - ログインボタン をクリックします
+2026-01-13 11:29:14,669 [INFO] core.utils - ログイン成功判定: #inventory_container を待機中…
+2026-01-13 11:29:14,676 [INFO] core.utils - ログイン成功判定: 成功
+2026-01-13 11:29:14,676 [INFO] tasks.sample_login - ログイン後URL: https://www.saucedemo.com/inventory.html
+2026-01-13 11:29:14,679 [INFO] tasks.sample_login - ログイン後タイトル: Swag Labs
+2026-01-13 11:29:14,770 [INFO] __main__ - === ジョブ正常終了: sample_login ===
+2026-01-13 11:36:19,409 [INFO] __main__ - === ジョブランナー開始 ===
+2026-01-13 11:36:19,410 [INFO] tasks.job_sample_login - === ジョブ開始: sample_login ===
+2026-01-13 11:36:24,321 [WARNING] core.driver_factory - Unknown browser type: chrome, fallback to chromium
+2026-01-13 11:36:25,081 [INFO] tasks.sample_login - ログインタスク開始
+2026-01-13 11:36:25,827 [INFO] tasks.sample_login - ページタイトル: Swag Labs
+2026-01-13 11:36:25,827 [INFO] tasks.sample_login - URL へアクセス: https://www.saucedemo.com/
+2026-01-13 11:36:25,827 [INFO] core.utils - ユーザーID に値を入力します
+2026-01-13 11:36:25,872 [INFO] core.utils - パスワード に値を入力します
+2026-01-13 11:36:25,885 [INFO] core.utils - ログインボタン をクリックします
+2026-01-13 11:36:25,949 [INFO] core.utils - ログイン成功判定: #inventory_container を待機中…
+2026-01-13 11:36:25,953 [INFO] core.utils - ログイン成功判定: 成功
+2026-01-13 11:36:25,954 [INFO] tasks.sample_login - ログイン後URL: https://www.saucedemo.com/inventory.html
+2026-01-13 11:36:25,955 [INFO] tasks.sample_login - ログイン後タイトル: Swag Labs
+2026-01-13 11:36:26,034 [INFO] tasks.job_sample_login - === ジョブ正常終了: sample_login ===
+2026-01-13 11:36:26,034 [INFO] __main__ - === ジョブランナー終了 ===
