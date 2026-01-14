@@ -11,6 +11,35 @@ def load_settings():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
+def create_browser():
+    """
+    Playwright のブラウザ・コンテキスト・ページを生成して返す共通関数。
+    settings.yaml の browser_type / headless を参照する。
+    """
+    settings = load_settings()
+    browser_type = settings.get("browser", {}).get("type", "chromium")
+    headless = settings.get("browser", {}).get("headless", True)
+
+    playwright = sync_playwright().start()
+
+    # ブラウザ選択
+    if browser_type == "chromium":
+        browser = playwright.chromium.launch(headless=headless)
+    elif browser_type == "firefox":
+        browser = playwright.firefox.launch(headless=headless)
+    elif browser_type == "webkit":
+        browser = playwright.webkit.launch(headless=headless)
+    else:
+        logger.warning(f"Unknown browser type: {browser_type}, fallback to chromium")
+        browser = playwright.chromium.launch(headless=headless)
+
+    context = browser.new_context()
+    page = context.new_page()
+
+    logger.info(f"ブラウザ起動: {browser_type}, headless={headless}")
+
+    return browser, context, page
+
 
 class BrowserSession:
     def __init__(self):

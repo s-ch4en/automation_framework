@@ -1,5 +1,6 @@
-browser: "chrome"        # 使用ブラウザ
-headless: true             # ブラウザをヘッドレスで動かすか
+browser:
+  type: chromium
+  headless: true
 timeout: 10                # 要素待ちのタイムアウト秒数
 log_level: "INFO"          # ログレベル
 log_dir: "logs"            # ログ出力先ディレクトリ
@@ -9,3 +10,5 @@ login:
   username: "standard_user"
   password: "secret_sauce"
 success_selector: "#inventory_container"
+slack_webhook_url: "https://hooks.slack.com/services/XXXX/XXXX/XXXX"
+

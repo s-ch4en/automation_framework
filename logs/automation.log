@@ -152,3 +152,16 @@ Ver.1.1
 2026-01-13 11:36:25,955 [INFO] tasks.sample_login - ログイン後タイトル: Swag Labs
 2026-01-13 11:36:26,034 [INFO] tasks.job_sample_login - === ジョブ正常終了: sample_login ===
 2026-01-13 11:36:26,034 [INFO] __main__ - === ジョブランナー終了 ===
+2026-01-14 16:34:32,521 [INFO] core.driver_factory - ブラウザ起動: chromium, headless=True
+2026-01-14 16:34:32,521 [INFO] __main__ - === 商品一覧取得ジョブ開始 ===
+2026-01-14 16:34:35,763 [INFO] __main__ - アクセス: https://www.saucedemo.com/
+2026-01-14 16:34:35,763 [INFO] core.utils - ユーザーID に値を入力します
+2026-01-14 16:34:35,821 [INFO] core.utils - パスワード に値を入力します
+2026-01-14 16:34:35,833 [INFO] core.utils - ログインボタン をクリックします
+2026-01-14 16:34:35,898 [INFO] core.utils - ログイン成功判定: #inventory_container を待機中…
+2026-01-14 16:34:35,921 [INFO] core.utils - ログイン成功判定: 成功
+2026-01-14 16:34:35,921 [INFO] __main__ - 商品一覧を取得します
+2026-01-14 16:34:36,032 [INFO] __main__ - 6 件の商品を取得
+2026-01-14 16:34:36,032 [INFO] core.files_util - CSV 書き込み: output\products_20260114.csv
+2026-01-14 16:34:36,036 [INFO] __main__ - CSV 保存完了: output\products_20260114.csv
+2026-01-14 16:34:36,036 [INFO] __main__ - === 商品一覧取得ジョブ正常終了 ===
