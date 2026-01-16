@@ -3,3 +3,10 @@ jobs:
     enabled: true
     module: tasks.job_sample_login
     function: main
+
+  - name: fetch_products
+    enabled: true
+    module: tasks.job_fetch_products
+    function: main
+    timeout: 60        # 秒数（任意）
+    retry: 2   
